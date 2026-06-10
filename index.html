@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhijith S — Developer & Designer</title>
+  <meta name="description" content="Abhijith S is a Computer Science student and developer specializing in web technologies, AI, and UI/UX design. Explore projects, skills, and get in touch." />
+  <meta name="keywords" content="Abhijith S, developer, portfolio, computer science, web developer, AI, UI/UX" />
+  <meta name="author" content="Abhijith S" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Abhijith S — Developer & Designer" />
+  <meta property="og:description" content="Computer Science student building digital products with web technologies, AI, and design." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+</head>
+<body>
+
+  <!-- Ambient Background Glow -->
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- ======================== NAVIGATION ======================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#hero" class="nav-logo" id="nav-logo">abhijith<span>.</span></a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#blog">Blog</a>
+        <a href="#journey">Journey</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ======================== HERO ======================== -->
+  <section class="hero section" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge reveal">
+          <span class="dot"></span>
+          Open to opportunities
+        </div>
+
+        <h1 class="hero-title reveal reveal-delay-1">
+          Hi, I'm<br />
+          <span class="gradient-text">Abhijith S</span>
+        </h1>
+
+        <p class="hero-role reveal reveal-delay-2">Computer Science Student & Developer</p>
+
+        <p class="hero-description reveal reveal-delay-3">
+          I build thoughtful digital products at the intersection of web technologies, 
+          artificial intelligence, and design — turning ideas into elegant, functional experiences.
+        </p>
+
+        <div class="hero-buttons reveal reveal-delay-4">
+          <a href="#projects" class="btn-primary" id="btn-view-projects">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+            View Projects
+          </a>
+          <a href="#" class="btn-secondary" id="btn-download-resume">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Resume
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal reveal-delay-2">
+        <div class="profile-frame">
+          <img src="assets/profile.jpeg" alt="Abhijith S — Developer" class="profile-img" />
+
+          <div class="profile-float-card card-1">
+            <span class="card-icon">🎓</span>
+            <span class="card-label">CS </span>
+            <span class="card-value">Student</span>
+          </div>
+
+          <div class="profile-float-card card-2">
+            <span class="card-icon">✨</span>
+            <span class="card-label">Aspiring </span>
+            <span class="card-value">Developer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== ABOUT ======================== -->
+  <section class="section" id="about">
+    <div class="container">
+      <span class="section-label reveal">About Me</span>
+      <h2 class="section-title reveal reveal-delay-1">Passionate about crafting<br />digital experiences</h2>
+      <p class="section-subtitle reveal reveal-delay-2">A quick look at who I am and what drives me forward.</p>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="reveal reveal-delay-3">
+            I'm <strong>Abhijith S</strong>, a Computer Science student with a deep passion for building products 
+            that sit at the crossroads of <strong>technology and design</strong>. I believe great software isn't 
+            just functional — it should feel intuitive, elegant, and delightful to use.
+          </p>
+          <p class="reveal reveal-delay-4">
+            My journey spans across <strong>web development</strong>, <strong>artificial intelligence</strong>, 
+            and <strong>UI/UX design</strong>. I'm constantly exploring new technologies and pushing myself 
+            to learn and build things that make a real impact.
+          </p>
+          <p class="reveal reveal-delay-5">
+            When I'm not coding, you'll find me exploring new design trends, contributing to open-source 
+            projects, or diving into the latest advancements in AI. I believe in continuous learning 
+            and growing one commit at a time.
+          </p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card reveal reveal-delay-3">
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Projects Completed</div>
+          </div>
+          <div class="stat-card reveal reveal-delay-4">
+            <div class="stat-number">9+</div>
+            <div class="stat-label">Technologies Learned</div>
+          </div>
+          <div class="stat-card reveal reveal-delay-5">
+            <div class="stat-number">3+</div>
+            <div class="stat-label">Certifications Earned</div>
+          </div>
+          <div class="stat-card reveal reveal-delay-6">
+            <div class="stat-number">∞</div>
+            <div class="stat-label">Curiosity & Drive</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SKILLS ======================== -->
+  <section class="section" id="skills">
+    <div class="container">
+      <span class="section-label reveal">Skills & Tools</span>
+      <h2 class="section-title reveal reveal-delay-1">Technologies I work with</h2>
+      <p class="section-subtitle reveal reveal-delay-2">A curated toolkit that powers my development workflow.</p>
+
+      <div class="skills-grid">
+        <!-- HTML -->
+        <div class="skill-card reveal reveal-delay-1" id="skill-html">
+          <div class="skill-icon">
+            <svg viewBox="0 0 128 128" width="44" height="44"><path fill="#E44D26" d="M19.037 113.876L9.032 1.661h109.936l-10.016 112.198-45.019 12.48z"/><path fill="#F16529" d="M64 116.8l36.378-10.086 8.559-95.878H64z"/><path fill="#EBEBEB" d="M64 52.455H45.788L44.53 38.361H64V24.599H29.489l.33 3.692 3.382 37.927H64zm0 35.743l-.061.017-15.327-4.14-.979-10.975H33.816l1.928 21.609 28.193 7.826.063-.017z"/><path fill="#fff" d="M63.952 52.455v13.763h16.947l-1.597 17.849-15.35 4.143v14.319l28.215-7.82.207-2.325 3.234-36.233.335-3.696h-3.708zm0-27.856v13.762h33.244l.276-3.092.628-6.978.329-3.692z"/></svg>
+          </div>
+          <div class="skill-name">HTML</div>
+          <div class="skill-category">Markup</div>
+        </div>
+
+        <!-- CSS -->
+        <div class="skill-card reveal reveal-delay-2" id="skill-css">
+          <div class="skill-icon">
+            <svg viewBox="0 0 128 128" width="44" height="44"><path fill="#1572B6" d="M19.037 113.876L9.032 1.661h109.936l-10.016 112.198-45.019 12.48z"/><path fill="#33A9DC" d="M64 116.8l36.378-10.086 8.559-95.878H64z"/><path fill="#EBEBEB" d="M64 52.455H45.788L44.53 38.361H64V24.599H29.489l.33 3.692 3.382 37.927H64zm0 35.743l-.061.017-15.327-4.14-.979-10.975H33.816l1.928 21.609 28.193 7.826.063-.017z"/><path fill="#fff" d="M63.952 52.455v13.763h16.947l-1.597 17.849-15.35 4.143v14.319l28.215-7.82.207-2.325 3.234-36.233.335-3.696h-3.708zm0-27.856v13.762h33.244l.276-3.092.628-6.978.329-3.692z"/></svg>
+          </div>
+          <div class="skill-name">CSS</div>
+          <div class="skill-category">Styling</div>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="skill-card reveal reveal-delay-3" id="skill-javascript">
+          <div class="skill-icon">
+            <svg viewBox="0 0 128 128" width="44" height="44"><path fill="#F0DB4F" d="M1.408 1.408h125.184v125.184H1.408z"/><path fill="#323330" d="M116.347 96.736c-.917-5.711-4.641-10.508-15.672-14.981-3.832-1.761-8.104-3.022-9.377-5.926-.452-1.69-.512-2.642-.226-3.665.821-3.32 4.784-4.355 7.925-3.403 2.023.678 3.938 2.237 5.093 4.724 5.402-3.498 5.391-3.475 9.163-5.879-1.381-2.141-2.118-3.129-3.022-4.045-3.249-3.629-7.676-5.498-14.756-5.355l-3.688.477c-3.534.893-6.902 2.748-8.877 5.235-5.926 6.724-4.236 18.492 2.975 23.335 7.104 5.332 17.54 6.545 18.873 11.531 1.297 6.104-4.486 8.08-10.234 7.378-4.236-.881-6.592-3.034-9.139-6.949-4.688 2.713-4.688 2.713-9.508 5.485 1.143 2.499 2.344 3.63 4.26 5.795 9.068 9.198 31.76 8.746 35.83-5.176.165-.478 1.261-3.666.38-8.581zM69.21 58.943l-.024 31.06c0 4.157.167 7.954-.361 9.123-.871 2.387-3.174 3.149-5.236 2.596-2.179-1.021-3.274-2.531-4.536-4.698l-1.024-.504c-3.044 1.876-6.088 3.752-9.144 5.604 1.533 3.195 3.778 5.923 6.733 7.693 4.397 2.521 10.275 3.349 16.573 1.964 4.074-1.142 7.588-3.665 9.44-7.406 2.685-5.128 2.11-11.37 2.086-18.332.066-10.381.024-20.774.024-31.184H69.21z"/></svg>
+          </div>
+          <div class="skill-name">JavaScript</div>
+          <div class="skill-category">Language</div>
+        </div>
+
+        <!-- Python -->
+        <div class="skill-card reveal reveal-delay-4" id="skill-python">
+          <div class="skill-icon">
+            <svg viewBox="0 0 128 128" width="44" height="44"><linearGradient id="pyA" gradientUnits="userSpaceOnUse" x1="12.959" y1="12.039" x2="69.834" y2="69.414"><stop offset="0" stop-color="#387EB8"/><stop offset="1" stop-color="#366994"/></linearGradient><path fill="url(#pyA)" d="M63.391 1.988c-4.222.02-8.252.379-11.8 1.007-10.45 1.846-12.346 5.71-12.346 12.837v9.411h24.693v3.137H29.977c-7.176 0-13.46 4.313-15.426 12.521-2.268 9.405-2.368 15.275 0 25.096 1.755 7.311 5.947 12.519 13.124 12.519h8.491V67.234c0-8.151 7.051-15.34 15.426-15.34h24.665c6.866 0 12.346-5.654 12.346-12.548V15.833c0-6.693-5.646-11.72-12.346-12.837-4.244-.706-8.645-1.027-12.866-1.008zM50.037 9.557c2.55 0 4.634 2.117 4.634 4.721 0 2.593-2.083 4.69-4.634 4.69-2.56 0-4.633-2.097-4.633-4.69-.001-2.604 2.073-4.721 4.633-4.721z"/><linearGradient id="pyB" gradientUnits="userSpaceOnUse" x1="60.648" y1="62.304" x2="120.791" y2="117.165"><stop offset="0" stop-color="#FFC331"/><stop offset="1" stop-color="#F5A623"/></linearGradient><path fill="url(#pyB)" d="M91.682 28.38v10.966c0 8.5-7.208 15.655-15.426 15.655H51.591c-6.756 0-12.346 5.783-12.346 12.549v23.515c0 6.691 5.818 10.628 12.346 12.547 7.816 2.297 15.312 2.713 24.665 0 6.216-1.801 12.346-5.423 12.346-12.547v-9.412H63.938v-3.138h37.012c7.176 0 9.852-5.005 12.348-12.519 2.578-7.735 2.467-15.174 0-25.096-1.774-7.145-5.161-12.521-12.348-12.521h-9.268zM77.809 87.927c2.561 0 4.634 2.097 4.634 4.692 0 2.602-2.074 4.719-4.634 4.719-2.55 0-4.633-2.117-4.633-4.719 0-2.595 2.083-4.692 4.633-4.692z"/></svg>
+          </div>
+          <div class="skill-name">Python</div>
+          <div class="skill-category">Language</div>
+        </div>
+
+        <!-- SQL -->
+        <div class="skill-card reveal reveal-delay-5" id="skill-sql">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          </div>
+          <div class="skill-name">SQL</div>
+          <div class="skill-category">Database</div>
+        </div>
+
+        <!-- C -->
+        <div class="skill-card reveal reveal-delay-6" id="skill-c">
+          <div class="skill-icon">
+            <svg viewBox="0 0 128 128" width="44" height="44"><path fill="#659AD2" d="M115.4 30.7L67.1 2.9c-.8-.5-1.9-.7-3.1-.7-1.2 0-2.3.3-3.1.7l-48 27.9c-1.7 1-2.9 3.5-2.9 5.4v55.7c0 1.1.2 2.4 1 3.5l106.8-62c-.6-1.2-1.5-2.1-2.4-2.7z"/><path fill="#03599C" d="M10.7 95.3c.5.8 1.2 1.5 1.9 1.9l48.2 27.9c.8.5 1.9.7 3.1.7 1.2 0 2.3-.3 3.1-.7l48-27.9c1.7-1 2.9-3.5 2.9-5.4V36.1c0-.9-.1-1.9-.6-2.8l-106.6 62z"/><path fill="#fff" d="M85.3 76.1C81.1 83.5 73.1 88.5 64 88.5c-13.5 0-24.5-11-24.5-24.5s11-24.5 24.5-24.5c9.1 0 17.1 5 21.3 12.5l13-7.5c-6.8-11.9-19.6-20-34.3-20-21.8 0-39.5 17.7-39.5 39.5s17.7 39.5 39.5 39.5c14.6 0 27.4-8 34.2-19.8l-12.9-7.6z"/></svg>
+          </div>
+          <div class="skill-name">C</div>
+          <div class="skill-category">Language</div>
+        </div>
+
+        <!-- C++ -->
+        <div class="skill-card reveal reveal-delay-7" id="skill-cpp">
+          <div class="skill-icon">
+            <svg viewBox="0 0 128 128" width="44" height="44"><path fill="#659AD2" d="M115.4 30.7L67.1 2.9c-.8-.5-1.9-.7-3.1-.7-1.2 0-2.3.3-3.1.7l-48 27.9c-1.7 1-2.9 3.5-2.9 5.4v55.7c0 1.1.2 2.4 1 3.5l106.8-62c-.6-1.2-1.5-2.1-2.4-2.7z"/><path fill="#03599C" d="M10.7 95.3c.5.8 1.2 1.5 1.9 1.9l48.2 27.9c.8.5 1.9.7 3.1.7 1.2 0 2.3-.3 3.1-.7l48-27.9c1.7-1 2.9-3.5 2.9-5.4V36.1c0-.9-.1-1.9-.6-2.8l-106.6 62z"/><path fill="#fff" d="M85.3 76.1C81.1 83.5 73.1 88.5 64 88.5c-13.5 0-24.5-11-24.5-24.5s11-24.5 24.5-24.5c9.1 0 17.1 5 21.3 12.5l13-7.5c-6.8-11.9-19.6-20-34.3-20-21.8 0-39.5 17.7-39.5 39.5s17.7 39.5 39.5 39.5c14.6 0 27.4-8 34.2-19.8l-12.9-7.6z"/><path fill="#fff" d="M100 59v6h-6v6h6v6h6v-6h6v-6h-6v-6zm-18 0v6h-6v6h6v6h6v-6h6v-6h-6v-6z"/></svg>
+          </div>
+          <div class="skill-name">C++</div>
+          <div class="skill-category">Language</div>
+        </div>
+
+        <!-- Figma -->
+        <div class="skill-card reveal reveal-delay-8" id="skill-figma">
+          <div class="skill-icon">
+            <svg viewBox="0 0 128 128" width="44" height="44"><path fill="#0ACF83" d="M45.5 129c11.9 0 21.5-9.6 21.5-21.5V86H45.5C33.6 86 24 95.6 24 107.5S33.6 129 45.5 129z"/><path fill="#A259FF" d="M24 64.5C24 52.6 33.6 43 45.5 43H67v43H45.5C33.6 86 24 76.4 24 64.5z"/><path fill="#F24E1E" d="M24 21.5C24 9.6 33.6 0 45.5 0H67v43H45.5C33.6 43 24 33.4 24 21.5z"/><path fill="#FF7262" d="M67 0h21.5C100.4 0 110 9.6 110 21.5S100.4 43 88.5 43H67V0z"/><path fill="#1ABCFE" d="M110 64.5c0 11.9-9.6 21.5-21.5 21.5S67 76.4 67 64.5 76.6 43 88.5 43 110 52.6 110 64.5z"/></svg>
+          </div>
+          <div class="skill-name">Figma</div>
+          <div class="skill-category">Design</div>
+        </div>
+
+        <!-- GitHub -->
+        <div class="skill-card reveal reveal-delay-8" id="skill-github">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" width="44" height="44" fill="#A1A1AA"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </div>
+          <div class="skill-name">GitHub</div>
+          <div class="skill-category">Version Control</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== PROJECTS ======================== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <span class="section-label reveal">Featured Work</span>
+      <div class="projects-header reveal reveal-delay-1">
+        <h2 class="section-title" style="margin-bottom: 0;">Projects I've built</h2>
+        <div class="projects-count" id="projectsCount">Showing 3 Projects</div>
+      </div>
+      <p class="section-subtitle reveal reveal-delay-2" style="margin-top: 8px;">A selection of meaningful projects that showcase my skills and passion.</p>
+
+      <div class="projects-filter reveal reveal-delay-3">
+        <button class="filter-btn active" data-filter="all">All <span class="filter-count">(3)</span></button>
+        <button class="filter-btn" data-filter="design">Design <span class="filter-count">(1)</span></button>
+        <button class="filter-btn" data-filter="web">Web <span class="filter-count">(1)</span></button>
+        <button class="filter-btn" data-filter="code">Code <span class="filter-count">(1)</span></button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+        <!-- Project 1: Tide -->
+        <div class="project-card featured-project" data-category="design">
+          <div class="project-image-wrap figma-embed-wrap">
+            <iframe style="border: none;" width="100%" height="100%" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FYoIrwZTUZgUC2gC0GZ7bk1%2FTide%3Fnode-id%3D0-1%26p%3Df%26t%3Dw8JfEV9fUNC7UeVK-0" allowfullscreen></iframe>
+          </div>
+          <div class="project-content">
+            <div class="project-meta">
+              <h3 class="project-title">Tide</h3>
+              <span class="category-badge design">Design</span>
+            </div>
+            <p class="project-description">
+              Modern task management application designed in Figma with a focus on productivity, clean navigation, prototyping, and UI/UX design.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Figma</span>
+              <span class="project-tag">UI/UX Design</span>
+              <span class="project-tag">Prototyping</span>
+              <span class="project-tag">Design System</span>
+            </div>
+            <div class="project-links">
+              <a href="https://www.figma.com/design/YoIrwZTUZgUC2gC0GZ7bk1/Tide?node-id=0-1&p=f&t=w8JfEV9fUNC7UeVK-0" target="_blank" rel="noopener" class="project-link primary">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Prototype
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Portfolio Website -->
+        <div class="project-card" data-category="web">
+          <div class="project-image-wrap">
+            <img src="assets/project-portfolio.png" alt="Portfolio Website" loading="lazy" />
+            <div class="project-image-overlay"></div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta">
+              <h3 class="project-title">Portfolio Website</h3>
+              <span class="category-badge web">Web</span>
+            </div>
+            <p class="project-description">
+              Personal portfolio website built with modern web technologies, responsive design, and premium user experience.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">HTML</span>
+              <span class="project-tag">CSS</span>
+              <span class="project-tag">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link primary">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Live Demo
+              </a>
+              <a href="#" class="project-link secondary">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Sign Language Interpreter -->
+        <div class="project-card" data-category="code">
+          <div class="project-image-wrap">
+            <img src="assets/project-sign-language.png" alt="Sign Language Interpreter" loading="lazy" />
+            <div class="project-image-overlay"></div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta">
+              <h3 class="project-title">Sign Language Interpreter</h3>
+              <span class="category-badge code">Code</span>
+            </div>
+            <p class="project-description">
+              AI-powered sign language interpretation system focused on accessibility and real-time communication.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">OpenCV</span>
+              <span class="project-tag">Machine Learning</span>
+              <span class="project-tag">AI</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link primary">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Live Demo
+              </a>
+              <a href="#" class="project-link secondary">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== BLOG ======================== -->
+  <section class="section" id="blog">
+    <div class="container">
+      <span class="section-label reveal">Blog</span>
+      <h2 class="section-title reveal reveal-delay-1">Thoughts & insights</h2>
+      <p class="section-subtitle reveal reveal-delay-2">Writing about development, design, and everything I'm learning along the way.</p>
+
+      <div class="blog-grid">
+        <!-- Blog Post 1 -->
+        <article class="blog-card reveal reveal-delay-3" id="blog-post-1">
+          <div class="blog-card-date">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            June 5, 2025
+          </div>
+          <h3 class="blog-card-title">Why I Chose AI as My First Big Project</h3>
+          <p class="blog-card-excerpt">
+            Building a sign language interpreter taught me more than any textbook ever could. Here's what I learned about merging AI with real-world impact.
+          </p>
+          <a href="#" class="blog-card-link" data-blog="1">
+            Read More
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </article>
+
+        <!-- Blog Post 2 -->
+        <article class="blog-card reveal reveal-delay-4" id="blog-post-2">
+          <div class="blog-card-date">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            May 18, 2025
+          </div>
+          <h3 class="blog-card-title">Design Thinking for Developers: A Practical Guide</h3>
+          <p class="blog-card-excerpt">
+            Great code deserves great design. I break down how I approach UI/UX as a developer and why learning Figma changed the way I build products.
+          </p>
+          <a href="#" class="blog-card-link" data-blog="2">
+            Read More
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </article>
+
+        <!-- Blog Post 3 -->
+        <article class="blog-card reveal reveal-delay-5" id="blog-post-3">
+          <div class="blog-card-date">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            April 29, 2025
+          </div>
+          <h3 class="blog-card-title">From Zero to Portfolio: Building My First Website</h3>
+          <p class="blog-card-excerpt">
+            The story behind this portfolio — the tools I used, the mistakes I made, and how I went from a blank HTML file to a site I'm proud of.
+          </p>
+          <a href="#" class="blog-card-link" data-blog="3">
+            Read More
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== BLOG READER MODAL ======================== -->
+  <div class="blog-modal-overlay" id="blogModalOverlay"></div>
+  <div class="blog-modal" id="blogModal">
+    <button class="blog-modal-close" id="blogModalClose" aria-label="Close article">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="blog-modal-body">
+      <div class="blog-modal-meta">
+        <span class="blog-modal-date" id="blogModalDate"></span>
+        <span class="blog-modal-read" id="blogModalRead"></span>
+      </div>
+      <h2 class="blog-modal-title" id="blogModalTitle"></h2>
+      <div class="blog-modal-tags" id="blogModalTags"></div>
+      <div class="blog-modal-content" id="blogModalContent"></div>
+    </div>
+  </div>
+
+  <!-- ======================== JOURNEY ======================== -->
+  <section class="section" id="journey">
+    <div class="container">
+      <span class="section-label reveal">My Journey</span>
+      <h2 class="section-title reveal reveal-delay-1">The path so far</h2>
+      <p class="section-subtitle reveal reveal-delay-2">Key milestones that have shaped my growth as a developer.</p>
+
+      <div class="timeline">
+        <!-- Timeline Item 1 -->
+        <div class="timeline-item reveal reveal-delay-3">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2024 — Present</div>
+          <div class="timeline-card">
+            <h3 class="timeline-title">Bachelor's in Computer Science</h3>
+            <div class="timeline-subtitle">University Education</div>
+            <p class="timeline-description">
+              Pursuing a Bachelor's degree in Computer Science, building a strong foundation in 
+              algorithms, data structures, software engineering, and artificial intelligence.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div class="timeline-item reveal reveal-delay-4">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2024</div>
+          <div class="timeline-card">
+            <h3 class="timeline-title">AI & Machine Learning Certification</h3>
+            <div class="timeline-subtitle">Professional Development</div>
+            <p class="timeline-description">
+              Completed comprehensive certifications in AI and machine learning, gaining hands-on 
+              experience with computer vision, neural networks, and real-world AI applications.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 3 -->
+        <div class="timeline-item reveal reveal-delay-5">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2023</div>
+          <div class="timeline-card">
+            <h3 class="timeline-title">Web Development Journey</h3>
+            <div class="timeline-subtitle">Self-Taught Development</div>
+            <p class="timeline-description">
+              Dove deep into modern web development, mastering HTML, CSS, JavaScript, and responsive design. 
+              Built multiple projects to solidify skills and develop a strong design sensibility.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 4 -->
+        <div class="timeline-item reveal reveal-delay-6">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2023</div>
+          <div class="timeline-card">
+            <h3 class="timeline-title">UI/UX Design Exploration</h3>
+            <div class="timeline-subtitle">Design Skills</div>
+            <p class="timeline-description">
+              Discovered a passion for design and began learning Figma, creating UI prototypes, and 
+              studying design principles. Combined technical skills with design thinking to build 
+              better user experiences.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 5 -->
+        <div class="timeline-item reveal reveal-delay-7">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2022</div>
+          <div class="timeline-card">
+            <h3 class="timeline-title">First Lines of Code</h3>
+            <div class="timeline-subtitle">Where It All Began</div>
+            <p class="timeline-description">
+              Wrote my first program in C and immediately fell in love with the art of programming. 
+              This spark ignited a journey of continuous learning and building that continues to this day.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== CONTACT ======================== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <span class="section-label reveal">Get In Touch</span>
+      <h2 class="section-title reveal reveal-delay-1">Let's work together</h2>
+      <p class="section-subtitle reveal reveal-delay-2">Have a project idea or just want to say hello? I'd love to hear from you.</p>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal reveal-delay-3">
+          <p class="contact-text">
+            I'm currently open to freelance projects, internship opportunities, and collaborations. 
+            Feel free to reach out through any of the channels below.
+          </p>
+
+          <!-- Email -->
+          <a href="mailto:iamabhijith11@gmail.com" class="contact-link-item" id="contact-email">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+            </div>
+            <div>
+              <div class="contact-link-label">Email</div>
+              <div class="contact-link-value">iamabhijith11@gmail.com</div>
+            </div>
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com/in/abhijith-s" target="_blank" rel="noopener" class="contact-link-item" id="contact-linkedin">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+            <div>
+              <div class="contact-link-label">LinkedIn</div>
+              <div class="contact-link-value">linkedin.com/in/abhijith-s</div>
+            </div>
+          </a>
+
+          <!-- GitHub -->
+          <a href="https://github.com/abbhi-jit" target="_blank" rel="noopener" class="contact-link-item" id="contact-github">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </div>
+            <div>
+              <div class="contact-link-label">GitHub</div>
+              <div class="contact-link-value">github.com/abbhi-jit</div>
+            </div>
+          </a>
+
+          <!-- Instagram -->
+          <a href="https://instagram.com/abb.hi_" target="_blank" rel="noopener" class="contact-link-item" id="contact-instagram">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </div>
+            <div>
+              <div class="contact-link-label">Instagram</div>
+              <div class="contact-link-value">@abb.hi_</div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Contact Form — Web3Forms -->
+        <form class="contact-form reveal reveal-delay-4" id="contactForm" onsubmit="handleFormSubmit(event)">
+          <!-- Web3Forms access key — replace YOUR_ACCESS_KEY with your key from https://web3forms.com -->
+          <input type="hidden" name="access_key" id="web3forms-key" value="ea446e19-0351-4612-a806-0285cd36a317" />
+          <input type="hidden" name="subject" value="New message from portfolio" />
+          <input type="hidden" name="from_name" value="Portfolio Contact Form" />
+          <!-- Honeypot spam protection -->
+          <input type="checkbox" name="botcheck" style="display: none;" />
+          <div class="form-group">
+            <input type="text" name="name" id="form-name" placeholder="Your Name" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" id="form-email" placeholder="Your Email" required autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <input type="text" name="subject" id="form-subject" placeholder="Subject" />
+          </div>
+          <div class="form-group">
+            <textarea name="message" id="form-message" placeholder="Your Message" rows="5" required></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn-primary" id="btn-send-message">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">© 2025 Abhijith S. Built with <span>♥</span> and clean code.</p>
+      <div class="footer-links">
+        <a href="https://github.com/abbhi-jit" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/abhijith-s" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://instagram.com/abb.hi_" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================== HIDDEN ADMIN PANEL ======================== -->
+  <!-- Login Modal -->
+  <div class="admin-overlay" id="adminOverlay"></div>
+  <div class="admin-login" id="adminLogin">
+    <div class="admin-login-card">
+      <div class="admin-login-header">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        <h3>Admin Access</h3>
+      </div>
+      <p class="admin-login-hint">Enter your password to edit the portfolio.</p>
+      <div class="admin-input-group">
+        <input type="password" id="adminPassword" placeholder="Password" autocomplete="off" />
+      </div>
+      <div class="admin-login-error" id="adminError"></div>
+      <div class="admin-login-actions">
+        <button class="admin-btn secondary" id="adminCancelBtn">Cancel</button>
+        <button class="admin-btn primary" id="adminLoginBtn">Unlock</button>
+      </div>
+      <p class="admin-login-first" id="adminFirstTime">First time? This will set your password.</p>
+    </div>
+  </div>
+
+  <!-- Editor Panel -->
+  <div class="admin-panel" id="adminPanel">
+    <div class="admin-panel-header">
+      <div class="admin-panel-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        Edit Portfolio
+      </div>
+      <div class="admin-panel-actions">
+        <button class="admin-btn danger small" id="adminLogoutBtn" title="Logout">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        </button>
+        <button class="admin-btn small" id="adminCloseBtn" title="Close panel">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="admin-panel-body">
+      <!-- Hero Section -->
+      <div class="admin-section">
+        <div class="admin-section-label">Hero Section</div>
+        <div class="admin-field">
+          <label for="edit-hero-name">Name</label>
+          <input type="text" id="edit-hero-name" data-target=".gradient-text" />
+        </div>
+        <div class="admin-field">
+          <label for="edit-hero-role">Role / Title</label>
+          <input type="text" id="edit-hero-role" data-target=".hero-role" />
+        </div>
+        <div class="admin-field">
+          <label for="edit-hero-desc">Tagline</label>
+          <textarea id="edit-hero-desc" rows="3" data-target=".hero-description"></textarea>
+        </div>
+      </div>
+
+      <!-- About Section -->
+      <div class="admin-section">
+        <div class="admin-section-label">About Section</div>
+        <div class="admin-field">
+          <label for="edit-about-title">Section Title</label>
+          <input type="text" id="edit-about-title" data-target="#about .section-title" />
+        </div>
+        <div class="admin-field">
+          <label for="edit-stat-1-num">Stat 1 — Number</label>
+          <input type="text" id="edit-stat-1-num" />
+        </div>
+        <div class="admin-field">
+          <label for="edit-stat-1-label">Stat 1 — Label</label>
+          <input type="text" id="edit-stat-1-label" />
+        </div>
+        <div class="admin-field">
+          <label for="edit-stat-2-num">Stat 2 — Number</label>
+          <input type="text" id="edit-stat-2-num" />
+        </div>
+        <div class="admin-field">
+          <label for="edit-stat-2-label">Stat 2 — Label</label>
+          <input type="text" id="edit-stat-2-label" />
+        </div>
+        <div class="admin-field">
+          <label for="edit-stat-3-num">Stat 3 — Number</label>
+          <input type="text" id="edit-stat-3-num" />
+        </div>
+        <div class="admin-field">
+          <label for="edit-stat-3-label">Stat 3 — Label</label>
+          <input type="text" id="edit-stat-3-label" />
+        </div>
+        <div class="admin-field">
+          <label for="edit-stat-4-num">Stat 4 — Number</label>
+          <input type="text" id="edit-stat-4-num" />
+        </div>
+        <div class="admin-field">
+          <label for="edit-stat-4-label">Stat 4 — Label</label>
+          <input type="text" id="edit-stat-4-label" />
+        </div>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="admin-section">
+        <div class="admin-section-label">Contact Info</div>
+        <div class="admin-field">
+          <label for="edit-email">Email Address</label>
+          <input type="email" id="edit-email" />
+        </div>
+        <div class="admin-field">
+          <label for="edit-linkedin">LinkedIn URL</label>
+          <input type="url" id="edit-linkedin" />
+        </div>
+        <div class="admin-field">
+          <label for="edit-github">GitHub URL</label>
+          <input type="url" id="edit-github" />
+        </div>
+        <div class="admin-field">
+          <label for="edit-instagram">Instagram Username</label>
+          <input type="text" id="edit-instagram" />
+        </div>
+        <div class="admin-field">
+          <label for="edit-web3forms-key">Web3Forms Access Key</label>
+          <input type="text" id="edit-web3forms-key" placeholder="Get free key from web3forms.com" />
+        </div>
+      </div>
+
+      <!-- Save -->
+      <div class="admin-save-bar">
+        <button class="admin-btn primary full" id="adminSaveBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+          Save All Changes
+        </button>
+        <div class="admin-save-status" id="adminSaveStatus"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================== JAVASCRIPT ======================== -->
+  <script src="script.js"></script>
+  <script src="blog.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
