@@ -67,6 +67,44 @@ const projectsData = [
       }
     ],
     featured: false
+  },
+  {
+    id: 'pulse',
+    title: 'Pulse',
+    category: 'code',
+    badgeText: 'AI Agent',
+    description: 'An AI automation agent built to streamline complex workflows and intelligent tasks.',
+    tags: ['AI', 'Automation', 'Agent'],
+    mediaType: 'image',
+    mediaSrc: 'assets/project-portfolio.png',
+    links: [
+      {
+        text: 'Live Demo',
+        url: 'https://abbhi-jit.github.io/pulse/',
+        type: 'primary',
+        icon: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>'
+      }
+    ],
+    featured: false
+  },
+  {
+    id: 'tide-app',
+    title: 'Tide App',
+    category: 'code',
+    badgeText: 'Mobile App',
+    description: 'A cross-platform mobile application built with Flutter, focusing on clean UI and seamless performance.',
+    tags: ['Flutter', 'Dart', 'Mobile'],
+    mediaType: 'image',
+    mediaSrc: 'assets/project-task-manager.png',
+    links: [
+      {
+        text: 'Live Demo',
+        url: 'https://abbhi-jit.github.io/tide_app/',
+        type: 'primary',
+        icon: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>'
+      }
+    ],
+    featured: false
   }
 ];
 
