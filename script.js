@@ -375,27 +375,7 @@ document.querySelectorAll('.skill-card').forEach(card => {
   });
 });
 
-/* ========================================
-   PROJECT CARD HOVER GLOW
-   ======================================== */
-document.querySelectorAll('.project-card').forEach(card => {
-  card.addEventListener('mousemove', (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
 
-    card.style.setProperty('--mouse-x', `${x}px`);
-    card.style.setProperty('--mouse-y', `${y}px`);
-    card.style.background = `
-      radial-gradient(400px circle at ${x}px ${y}px, rgba(139, 92, 246, 0.06), transparent 40%),
-      rgba(17, 17, 17, 0.7)
-    `;
-  });
-
-  card.addEventListener('mouseleave', () => {
-    card.style.background = '';
-  });
-});
 
 /* ========================================
    ADD SPIN ANIMATION CSS
