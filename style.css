@@ -679,7 +679,8 @@ input, textarea {
    ======================================== */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fill, 180px);
+  justify-content: center;
   gap: 16px;
   margin-top: 60px;
 }
@@ -696,6 +697,10 @@ input, textarea {
   cursor: default;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
 }
 
 .skill-card::after {
@@ -1429,7 +1434,8 @@ input, textarea {
   }
 
   .skills-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fill, 140px);
+    justify-content: center;
     gap: 12px;
   }
 
@@ -1475,6 +1481,7 @@ input, textarea {
 
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
   }
 
   .section-title {
