@@ -733,14 +733,16 @@ input, textarea {
   height: 50px;
 }
 
-.skill-icon img {
+.skill-icon img,
+.skill-icon svg {
   width: 44px;
   height: 44px;
   filter: grayscale(0.2);
   transition: var(--transition-base);
 }
 
-.skill-card:hover .skill-icon img {
+.skill-card:hover .skill-icon img,
+.skill-card:hover .skill-icon svg {
   filter: grayscale(0);
 }
 
