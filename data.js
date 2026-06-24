@@ -11,10 +11,8 @@ var ARROW_ICON = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" st
 // Global State
 window.currentSiteConfig = null;
 window.currentProjects = [];
-window.currentBlogs = [];
 window.currentSkills = [];
 window.currentJourney = [];
-window.blogPostsData = {};
 
 function applySiteConfig(config) {
   if (!config) return;
@@ -216,32 +214,6 @@ function renderProjectCards(projects) {
   });
 }
 
-function renderBlogCards(blogs) {
-  var grid = document.getElementById('blogGrid');
-  if (!grid) return;
-  grid.innerHTML = '';
-  
-  window.currentBlogs = blogs;
-  window.blogPostsData = {};
-
-  blogs.forEach(function(blog, i) {
-    window.blogPostsData[blog.id] = blog;
-    var delay = 3 + i;
-    
-    var article = document.createElement('article');
-    article.className = 'blog-card reveal reveal-delay-' + delay;
-    
-    article.innerHTML = 
-      '<div class="blog-card-date">' + CALENDAR_ICON + ' ' + blog.date + '</div>' +
-      '<h3 class="blog-card-title">' + blog.title + '</h3>' +
-      '<p class="blog-card-excerpt">' + blog.excerpt + '</p>' +
-      '<a href="#" class="blog-card-link" data-blog="' + blog.id + '">' +
-        'Read More ' + ARROW_ICON +
-      '</a>';
-      
-    grid.appendChild(article);
-  });
-}
 
 function renderSkillCards(skills) {
   var grid = document.getElementById('skillsGrid');
@@ -319,17 +291,6 @@ function loadProjects() {
   }).catch(function(e) { console.error("Error projects:", e); });
 }
 
-function loadBlogs() {
-  return db.collection('blogs').orderBy('order', 'asc').get().then(function(snap) {
-    var res = [];
-    snap.forEach(function(doc) { 
-      var d = doc.data(); 
-      d.id = doc.id; 
-      res.push(d); 
-    });
-    renderBlogCards(res);
-  }).catch(function(e) { console.error("Error blogs:", e); });
-}
 
 function loadSkills() {
   return db.collection('skills').orderBy('order', 'asc').get().then(function(snap) {
@@ -359,7 +320,6 @@ function loadAllData() {
   Promise.all([
     loadSiteConfig(),
     loadProjects(),
-    loadBlogs(),
     loadSkills(),
     loadJourney()
   ]).then(function() {

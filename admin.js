@@ -151,7 +151,6 @@
     // Refresh lists
     populateSkillsList();
     populateProjectsList();
-    populateBlogList();
     populateJourneyList();
   }
 
@@ -359,47 +358,6 @@
 
   document.getElementById('adminAddProject').addEventListener('click', function() { editProject(null); });
 
-
-  // ======================== BLOG CRUD ========================
-  function populateBlogList() {
-    var list = document.getElementById('adminBlogList');
-    list.innerHTML = '';
-    (window.currentBlogs || []).forEach(function(blog) {
-      list.appendChild(createCrudItem(blog.id, blog.title, editBlog, deleteBlog));
-    });
-  }
-
-  function deleteBlog(id) {
-    db.collection('blogs').doc(id).delete().then(function() {
-      window.loadBlogs();
-      setTimeout(populateBlogList, 500);
-    });
-  }
-
-  function editBlog(id) {
-    var b = window.currentBlogs.find(function(x) { return x.id === id; });
-    var title = prompt('Blog Title:', b ? b.title : '');
-    if (!title) return;
-    var date = prompt('Date:', b ? b.date : 'Jan 1, 2025');
-    var excerpt = prompt('Excerpt:', b ? b.excerpt : '');
-    var content = prompt('Content HTML:', b ? b.content : '<p>Hello world</p>');
-    var order = prompt('Order index:', b ? b.order : '10');
-
-    var data = {
-      title: title, date: date, excerpt: excerpt, content: content,
-      readTime: '5 min read', tags: [], order: parseInt(order) || 10
-    };
-
-    var req = id ? db.collection('blogs').doc(id).set(data) : db.collection('blogs').add(data);
-    req.then(function() {
-      window.loadBlogs();
-      setTimeout(populateBlogList, 500);
-    });
-  }
-
-  document.getElementById('adminAddBlog').addEventListener('click', function() { editBlog(null); });
-
-
   // ======================== JOURNEY CRUD ========================
   function populateJourneyList() {
     var list = document.getElementById('adminJourneyList');
@@ -484,7 +442,7 @@
       }
     });
 
-    // Seed blogs, projects, skills, journey if needed
+    // Seed projects, skills, journey if needed
     // Simplified for now so user can add them via CRUD UI manually to save quota
     // ...
     setTimeout(function() {

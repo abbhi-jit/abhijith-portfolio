@@ -41,7 +41,6 @@
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
-        <a href="#blog">Blog</a>
         <a href="#journey">Journey</a>
         <a href="#contact" class="nav-cta">Contact</a>
       </div>
@@ -254,35 +253,6 @@
     </div>
   </section>
 
-  <!-- ======================== BLOG ======================== -->
-  <section class="section" id="blog">
-    <div class="container">
-      <span class="section-label reveal">Blog</span>
-      <h2 class="section-title reveal reveal-delay-1">Thoughts & insights</h2>
-      <p class="section-subtitle reveal reveal-delay-2">Writing about development, design, and everything I'm learning along the way.</p>
-
-      <div class="blog-grid" id="blogGrid">
-        <!-- Blog cards rendered dynamically by data.js -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================== BLOG READER MODAL ======================== -->
-  <div class="blog-modal-overlay" id="blogModalOverlay"></div>
-  <div class="blog-modal" id="blogModal">
-    <button class="blog-modal-close" id="blogModalClose" aria-label="Close article">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
-    <div class="blog-modal-body">
-      <div class="blog-modal-meta">
-        <span class="blog-modal-date" id="blogModalDate"></span>
-        <span class="blog-modal-read" id="blogModalRead"></span>
-      </div>
-      <h2 class="blog-modal-title" id="blogModalTitle"></h2>
-      <div class="blog-modal-tags" id="blogModalTags"></div>
-      <div class="blog-modal-content" id="blogModalContent"></div>
-    </div>
-  </div>
 
   <!-- ======================== JOURNEY ======================== -->
   <section class="section" id="journey">
@@ -545,13 +515,7 @@
         <button class="admin-btn secondary full" id="adminAddProject">+ Add Project</button>
       </div>
 
-      <!-- Blog Section -->
-      <div class="admin-section">
-        <div class="admin-section-label">Blog Posts</div>
-        <div class="admin-crud-list" id="adminBlogList"></div>
-        <button class="admin-btn secondary full" id="adminAddBlog">+ Add Blog Post</button>
-      </div>
-
+    
       <!-- Journey Section -->
       <div class="admin-section">
         <div class="admin-section-label">Journey / Timeline</div>
@@ -614,7 +578,6 @@
   <script src="firebase-config.js"></script>
   <script src="data.js"></script>
   <script src="script.js"></script>
-  <script src="blog.js"></script>
   <script src="admin.js"></script>
 </body>
 </html>
