@@ -217,7 +217,7 @@ function renderProjectCards(projects) {
 
 function renderSkillCards(skills) {
   var grid = document.getElementById('skillsGrid');
-  if (!grid) return;
+  if (!grid || skills.length === 0) return;
   grid.innerHTML = '';
   
   window.currentSkills = skills;
