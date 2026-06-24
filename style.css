@@ -1435,7 +1435,7 @@ input, textarea {
 
   .skills-grid {
     grid-template-columns: repeat(4, 110px);
-    justify-content: center;
+    justify-content: start;
     gap: 12px;
   }
 
@@ -1481,7 +1481,7 @@ input, textarea {
 
   .skills-grid {
     grid-template-columns: repeat(3, 100px);
-    justify-content: center;
+    justify-content: start;
     gap: 10px;
   }
 
