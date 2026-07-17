@@ -29,7 +29,7 @@ function applySiteConfig(config) {
     var heroDesc = document.querySelector('.hero-description');
     if (heroDesc) heroDesc.textContent = config.hero.description || '';
     
-    var heroBadge = document.querySelector('.hero-badge span');
+    var heroBadge = document.querySelector('.hero-badge .badge-text');
     if (heroBadge) heroBadge.textContent = config.hero.badge || '';
     
     var resumeBtn = document.querySelector('.hero-actions .secondary');
