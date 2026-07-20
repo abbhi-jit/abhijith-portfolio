@@ -1,12 +1,6 @@
 // oneko.js: https://github.com/adryd325/oneko.js
 
 (function oneko() {
-  const isReducedMotion =
-    window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
-    window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
-
-  if (isReducedMotion) return;
-
   const nekoEl = document.createElement("div");
   let persistPosition = true;
 
@@ -124,6 +118,8 @@
     nekoEl.style.left = `${nekoPosX - 16}px`;
     nekoEl.style.top = `${nekoPosY - 16}px`;
     nekoEl.style.zIndex = 2147483647;
+    // Apply CSS filter to match the dark/purple theme
+    nekoEl.style.filter = "invert(1) sepia(1) hue-rotate(220deg) saturate(3) brightness(0.8)";
 
     nekoEl.style.backgroundImage = `url(${nekoFile})`;
     
