@@ -1,6 +1,11 @@
 // oneko.js: https://github.com/adryd325/oneko.js
 
-(function oneko() {
+window.toggleNeko = function() {
+  if (document.getElementById("oneko")) {
+    document.getElementById("oneko").remove();
+    return;
+  }
+
   const nekoEl = document.createElement("div");
   let persistPosition = true;
 
@@ -104,7 +109,10 @@
         idleTime = storedNeko.idleTime;
         idleAnimation = storedNeko.idleAnimation;
         idleAnimationFrame = storedNeko.idleAnimationFrame;
-        nekoEl.style.backgroundPosition = storedNeko.bgPos;
+        // Check if bgPos exists before trying to use it
+        if (storedNeko.bgPos) {
+           nekoEl.style.backgroundPosition = storedNeko.bgPos;
+        }
       }
     }
   
@@ -132,6 +140,7 @@
     
     if (persistPosition) {
       window.addEventListener("beforeunload", function (event) {
+        if (!document.getElementById("oneko")) return;
         window.localStorage.setItem("oneko", JSON.stringify({
           nekoPosX: nekoPosX,
           nekoPosY: nekoPosY,
@@ -272,4 +281,4 @@
   }
 
   init();
-})();
+};
