@@ -993,9 +993,19 @@ input, textarea {
 }
 
 .project-title-band {
-  background-color: #fde047;
-  color: #111;
+  background-color: var(--accent);
+  color: #fff;
+  padding: 0 24px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover .project-title-band {
+  max-height: 100px;
   padding: 12px 24px;
+  opacity: 1;
 }
 
 .project-title {
