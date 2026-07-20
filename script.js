@@ -230,8 +230,7 @@ function initParallax() {
   const hero = document.querySelector('.hero');
   const profileFrame = document.querySelector('.profile-frame');
   const floatCards = document.querySelectorAll('.profile-float-card');
-
-  if (!hero || !profileFrame) return;
+  const particles = document.getElementById('particles-js');
 
   let ticking = false;
 
@@ -239,16 +238,22 @@ function initParallax() {
     if (!ticking) {
       requestAnimationFrame(() => {
         const scrolled = window.scrollY;
-        const heroHeight = hero.offsetHeight;
+        
+        if (particles) {
+          particles.style.transform = `translateY(${-scrolled * 0.15}px)`;
+        }
 
-        if (scrolled < heroHeight) {
-          const factor = scrolled / heroHeight;
-          profileFrame.style.transform = `translateY(${scrolled * 0.08}px)`;
-          
-          floatCards.forEach((card, i) => {
-            const direction = i % 2 === 0 ? 1 : -1;
-            card.style.transform = `translateY(${-8 * Math.sin(Date.now() / 1000 + i) + scrolled * 0.04 * direction}px)`;
-          });
+        if (hero && profileFrame) {
+          const heroHeight = hero.offsetHeight;
+          if (scrolled < heroHeight) {
+            const factor = scrolled / heroHeight;
+            profileFrame.style.transform = `translateY(${scrolled * 0.08}px)`;
+            
+            floatCards.forEach((card, i) => {
+              const direction = i % 2 === 0 ? 1 : -1;
+              card.style.transform = `translateY(${-8 * Math.sin(Date.now() / 1000 + i) + scrolled * 0.04 * direction}px)`;
+            });
+          }
         }
 
         ticking = false;
