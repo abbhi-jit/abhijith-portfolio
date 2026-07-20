@@ -13,6 +13,32 @@ window.currentSiteConfig = null;
 window.currentProjects = [];
 window.currentSkills = [];
 window.currentJourney = [];
+window.currentCertificates = [
+  {
+    title: "AWS Certified Solutions Architect",
+    issuer: "Amazon Web Services",
+    date: "Aug 2025",
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>'
+  },
+  {
+    title: "Full-Stack Web Development",
+    issuer: "Udemy Bootcamp",
+    date: "Mar 2024",
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>'
+  },
+  {
+    title: "Google Data Analytics",
+    issuer: "Coursera",
+    date: "Nov 2023",
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>'
+  },
+  {
+    title: "React Native Specialist",
+    issuer: "Meta",
+    date: "Jan 2023",
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>'
+  }
+];
 
 function applySiteConfig(config) {
   if (!config) return;
@@ -274,6 +300,33 @@ function renderJourneyItems(items) {
   });
 }
 
+function renderCertificates(certs) {
+  var container = document.getElementById('certStackContainer');
+  var pagination = document.getElementById('certPagination');
+  if (!container || !pagination) return;
+  
+  container.innerHTML = '';
+  pagination.innerHTML = '';
+  
+  certs.forEach(function(cert, i) {
+    // Card
+    var card = document.createElement('div');
+    card.className = 'cert-card';
+    card.innerHTML = 
+      '<div class="cert-card-icon">' + cert.icon + '</div>' +
+      '<h3>' + cert.title + '</h3>' +
+      '<div class="cert-issuer">' + cert.issuer + '</div>' +
+      '<div class="cert-date">' + cert.date + '</div>';
+    container.appendChild(card);
+    
+    // Dot
+    var dot = document.createElement('div');
+    dot.className = 'cert-dot';
+    dot.dataset.index = i;
+    pagination.appendChild(dot);
+  });
+}
+
 function loadSiteConfig() {
   return db.collection('config').doc('site').get().then(function(doc) {
     if (doc.exists) applySiteConfig(doc.data());
@@ -318,6 +371,11 @@ function loadJourney() {
 }
 
 function loadAllData() {
+  // Render static/local data first
+  if (window.currentCertificates && window.currentCertificates.length > 0) {
+    renderCertificates(window.currentCertificates);
+  }
+
   Promise.all([
     loadSiteConfig(),
     loadProjects(),
@@ -328,6 +386,7 @@ function loadAllData() {
     if (typeof initProjectFilter === 'function') initProjectFilter();
     if (typeof initScrollReveal === 'function') initScrollReveal();
     if (typeof initStatCounters === 'function') initStatCounters();
+    if (typeof initCertStack === 'function') initCertStack();
     
     // Trigger scroll event to apply reveal classes immediately
     window.dispatchEvent(new Event('scroll'));

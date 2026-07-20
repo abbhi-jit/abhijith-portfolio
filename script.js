@@ -498,3 +498,95 @@ function initCursorGlow() {
   }
   animate();
 }
+
+/* ========================================
+   CERTIFICATES 3D STACK
+   ======================================== */
+window.initCertStack = function() {
+  const container = document.getElementById('certStackContainer');
+  const pagination = document.getElementById('certPagination');
+  if (!container || !pagination) return;
+
+  const cards = Array.from(container.querySelectorAll('.cert-card'));
+  const dots = Array.from(pagination.querySelectorAll('.cert-dot'));
+  if (cards.length === 0) return;
+
+  let currentIndex = 0;
+  let isScrolling = false;
+
+  function updateStack() {
+    cards.forEach((card, i) => {
+      card.className = 'cert-card'; // reset
+      let offset = i - currentIndex;
+
+      if (offset === 0) card.classList.add('active');
+      else if (offset === -1) card.classList.add('prev-1');
+      else if (offset === -2) card.classList.add('prev-2');
+      else if (offset === 1) card.classList.add('next-1');
+      else if (offset === 2) card.classList.add('next-2');
+      else if (offset < -2) card.classList.add('hidden-up');
+      else if (offset > 2) card.classList.add('hidden-down');
+    });
+
+    dots.forEach((dot, i) => {
+      if (i === currentIndex) dot.classList.add('active');
+      else dot.classList.remove('active');
+    });
+  }
+
+  function handleScroll(e) {
+    if (isScrolling) return;
+    
+    // Determine direction
+    const dir = Math.sign(e.deltaY);
+    if (dir > 0 && currentIndex < cards.length - 1) {
+      currentIndex++;
+      triggerScrollLock();
+    } else if (dir < 0 && currentIndex > 0) {
+      currentIndex--;
+      triggerScrollLock();
+    }
+  }
+
+  function triggerScrollLock() {
+    updateStack();
+    isScrolling = true;
+    setTimeout(() => { isScrolling = false; }, 600);
+  }
+
+  // Mouse wheel
+  container.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    handleScroll(e);
+  }, { passive: false });
+
+  // Pagination click
+  dots.forEach(dot => {
+    dot.addEventListener('click', (e) => {
+      currentIndex = parseInt(e.target.dataset.index);
+      updateStack();
+    });
+  });
+
+  // Touch Swipe
+  let touchStartY = 0;
+  container.addEventListener('touchstart', (e) => {
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  container.addEventListener('touchend', (e) => {
+    const touchEndY = e.changedTouches[0].clientY;
+    const diff = touchStartY - touchEndY;
+    if (Math.abs(diff) > 30) {
+      if (diff > 0 && currentIndex < cards.length - 1) {
+        currentIndex++;
+      } else if (diff < 0 && currentIndex > 0) {
+        currentIndex--;
+      }
+      updateStack();
+    }
+  }, { passive: true });
+
+  // Init
+  updateStack();
+};
