@@ -20,7 +20,7 @@ window.toggleNeko = function() {
   let idleAnimation = null;
   let idleAnimationFrame = 0;
 
-  const nekoSpeed = 10;
+  const nekoSpeed = 18; // Increased speed
   const spriteSets = {
     idle: [[-3, -3]],
     alert: [[-7, -3]],
@@ -123,6 +123,7 @@ window.toggleNeko = function() {
     nekoEl.style.position = "fixed";
     nekoEl.style.pointerEvents = "none";
     nekoEl.style.imageRendering = "pixelated";
+    nekoEl.style.transition = "left 0.1s linear, top 0.1s linear"; // Smooth movement
     nekoEl.style.left = `${nekoPosX - 16}px`;
     nekoEl.style.top = `${nekoPosY - 16}px`;
     nekoEl.style.zIndex = 2147483647;
