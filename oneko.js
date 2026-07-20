@@ -5,13 +5,19 @@ window.toggleNeko = function() {
   }
 
   const nekoEl = document.createElement("div");
-  let persistPosition = true;
+  let persistPosition = false; // Disable local storage persistence so it spawns at the button every time
 
-  let nekoPosX = 32;
-  let nekoPosY = 32;
+  let nekoPosX = window.innerWidth - 50;
+  let nekoPosY = 50;
+  const btn = document.getElementById("catToggleBtn");
+  if (btn) {
+    const rect = btn.getBoundingClientRect();
+    nekoPosX = rect.left + (rect.width / 2);
+    nekoPosY = rect.bottom + 20; // 20px below the button
+  }
   
-  let mousePosX = 0;
-  let mousePosY = 0;
+  let mousePosX = nekoPosX;
+  let mousePosY = nekoPosY;
 
   let frameCount = 0;
   let idleTime = 0;
