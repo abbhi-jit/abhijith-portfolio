@@ -1,26 +1,10 @@
 window.toggleNeko = function() {
   if (document.getElementById("oneko")) {
     document.getElementById("oneko").remove();
-    if (document.getElementById("oneko-jetpack")) {
-      document.getElementById("oneko-jetpack").remove();
-    }
     return;
   }
 
   const nekoEl = document.createElement("div");
-  const jetpackEl = document.createElement("div");
-  
-  let textRects = [];
-  function cacheTextRects() {
-    textRects = [];
-    const elements = document.querySelectorAll('h1, h2, h3, p, a, span, button');
-    elements.forEach(el => {
-      if (el.offsetParent !== null) {
-        textRects.push(el.getBoundingClientRect());
-      }
-    });
-  }
-
   let persistPosition = true;
 
   let nekoPosX = 32;
@@ -148,20 +132,6 @@ window.toggleNeko = function() {
     
     document.body.appendChild(nekoEl);
 
-    jetpackEl.id = "oneko-jetpack";
-    jetpackEl.innerHTML = "🔥";
-    jetpackEl.style.position = "fixed";
-    jetpackEl.style.pointerEvents = "none";
-    jetpackEl.style.fontSize = "20px";
-    jetpackEl.style.zIndex = 2147483646; // Behind cat
-    jetpackEl.style.display = "none";
-    jetpackEl.style.transition = "left 0.1s linear, top 0.1s linear";
-    document.body.appendChild(jetpackEl);
-    
-    cacheTextRects();
-    window.addEventListener('resize', cacheTextRects);
-    window.addEventListener('scroll', cacheTextRects, { passive: true });
-
     document.addEventListener("mousemove", function (event) {
       mousePosX = event.clientX;
       mousePosY = event.clientY;
@@ -277,7 +247,6 @@ window.toggleNeko = function() {
     const distance = Math.sqrt(diffX ** 2 + diffY ** 2);
 
     if (distance < nekoSpeed || distance < 48) {
-      jetpackEl.style.display = "none";
       idle();
       return;
     }
@@ -286,7 +255,6 @@ window.toggleNeko = function() {
     idleAnimationFrame = 0;
 
     if (idleTime > 1) {
-      jetpackEl.style.display = "none";
       setSprite("alert", 0);
       // count down after being alerted before moving
       idleTime = Math.min(idleTime, 7);
@@ -301,41 +269,14 @@ window.toggleNeko = function() {
     direction += diffX / distance < -0.5 ? "E" : "";
     setSprite(direction, frameCount);
 
-    let moveX = (diffX / distance) * nekoSpeed;
-    let moveY = (diffY / distance) * nekoSpeed;
-
-    // Repulsion physics from text bounding boxes
-    textRects.forEach(rect => {
-      let closestX = Math.max(rect.left, Math.min(nekoPosX, rect.right));
-      let closestY = Math.max(rect.top, Math.min(nekoPosY, rect.bottom));
-      let vecX = nekoPosX - closestX;
-      let vecY = nekoPosY - closestY;
-      
-      if (vecX === 0 && vecY === 0) {
-        vecX = nekoPosX - (rect.left + rect.width / 2);
-        vecY = nekoPosY - (rect.top + rect.height / 2);
-      }
-      
-      let vecLen = Math.sqrt(vecX * vecX + vecY * vecY);
-      if (vecLen < 60) { // 60px force field
-        let force = (60 - vecLen) * 0.6; // Strong repulsion
-        moveX -= (vecX / vecLen) * force;
-        moveY -= (vecY / vecLen) * force;
-      }
-    });
-
-    nekoPosX -= moveX;
-    nekoPosY -= moveY;
+    nekoPosX -= (diffX / distance) * nekoSpeed;
+    nekoPosY -= (diffY / distance) * nekoSpeed;
 
     nekoPosX = Math.min(Math.max(16, nekoPosX), window.innerWidth - 16);
     nekoPosY = Math.min(Math.max(16, nekoPosY), window.innerHeight - 16);
 
     nekoEl.style.left = `${nekoPosX - 16}px`;
     nekoEl.style.top = `${nekoPosY - 16}px`;
-    
-    jetpackEl.style.display = "block";
-    jetpackEl.style.left = `${nekoPosX - 12}px`;
-    jetpackEl.style.top = `${nekoPosY}px`;
   }
 
   init();
