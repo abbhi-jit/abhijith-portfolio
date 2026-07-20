@@ -25,23 +25,23 @@ function initParticles() {
           "value": 60,
           "density": { "enable": true, "value_area": 800 }
         },
-        "color": { "value": "#8B5CF6" },
+        "color": { "value": ["#ffffff", "#8B5CF6", "#fde047"] },
         "shape": { "type": "circle" },
         "opacity": {
-          "value": 0.5,
-          "random": false,
-          "anim": { "enable": false }
+          "value": 0.8,
+          "random": true,
+          "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false }
         },
         "size": {
-          "value": 3,
+          "value": 2.5,
           "random": true,
-          "anim": { "enable": false }
+          "anim": { "enable": true, "speed": 2, "size_min": 0.5, "sync": false }
         },
         "line_linked": {
           "enable": true,
           "distance": 150,
           "color": "#8B5CF6",
-          "opacity": 0.4,
+          "opacity": 0.15,
           "width": 1
         },
         "move": {
@@ -91,11 +91,17 @@ function initParticles() {
             const dy = mouseY - p.y;
             const dist = Math.sqrt(dx * dx + dy * dy);
             
-            // If within 250px radius, pull them towards cursor
-            if (dist < 250 && dist > 5) {
-              const force = (250 - dist) / 250; 
-              p.x += (dx / dist) * force * 3;
-              p.y += (dy / dist) * force * 3;
+            // Symbiotic behavior: attract if far, repel if too close (to prevent cluttering)
+            if (dist < 250) {
+              if (dist > 60) {
+                const force = (250 - dist) / 250; 
+                p.x += (dx / dist) * force * 1.5;
+                p.y += (dy / dist) * force * 1.5;
+              } else if (dist < 40) {
+                const force = (40 - dist) / 40;
+                p.x -= (dx / dist) * force * 2;
+                p.y -= (dy / dist) * force * 2;
+              }
             }
           });
         });
