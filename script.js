@@ -59,19 +59,48 @@ function initParticles() {
         "detect_on": "canvas",
         "events": {
           "onhover": { "enable": true, "mode": ["grab", "bubble"] },
-          "onclick": { "enable": true, "mode": "push" },
+          "onclick": { "enable": true, "mode": ["push", "remove"] },
           "resize": true
         },
         "modes": {
           "grab": { "distance": 200, "line_linked": { "opacity": 1 } },
           "bubble": { "distance": 250, "size": 6, "duration": 2, "opacity": 1, "speed": 3 },
           "repulse": { "distance": 200, "duration": 0.4 },
-          "push": { "particles_nb": 4 },
-          "remove": { "particles_nb": 2 }
+          "push": { "particles_nb": 1 },
+          "remove": { "particles_nb": 1 }
         }
       },
       "retina_detect": true
     });
+
+    // Custom physics: attract particles to mouse pointer
+    setTimeout(() => {
+      if (window.pJSDom && window.pJSDom.length > 0) {
+        const pJS = window.pJSDom[0].pJS;
+        let mouseX = 0;
+        let mouseY = 0;
+        let isMoving = false;
+        
+        window.addEventListener('mousemove', (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          isMoving = true;
+          
+          pJS.particles.array.forEach(p => {
+            const dx = mouseX - p.x;
+            const dy = mouseY - p.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            
+            // If within 250px radius, pull them towards cursor
+            if (dist < 250 && dist > 5) {
+              const force = (250 - dist) / 250; 
+              p.x += (dx / dist) * force * 3;
+              p.y += (dy / dist) * force * 3;
+            }
+          });
+        });
+      }
+    }, 500);
   }
 }
 
