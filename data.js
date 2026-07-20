@@ -162,11 +162,10 @@ function renderProjectCards(projects) {
     card.setAttribute('data-category', proj.category);
 
     card.innerHTML = mediaHtml +
+      '<div class="project-title-band">' +
+        '<h3 class="project-title">' + proj.title + '</h3>' +
+      '</div>' +
       '<div class="project-content">' +
-        '<div class="project-meta">' +
-          '<h3 class="project-title">' + proj.title + '</h3>' +
-          '<span class="category-badge ' + proj.category + '">' + proj.badgeText + '</span>' +
-        '</div>' +
         '<p class="project-description">' + proj.description + '</p>' +
         '<div class="project-tags">' + tagsHtml + '</div>' +
         '<div class="project-links">' + linksHtml + '</div>' +
@@ -255,17 +254,19 @@ function renderJourneyItems(items) {
   
   window.currentJourney = items;
 
+  var briefcaseIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;color:white;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>';
+
   items.forEach(function(item, i) {
     var delay = 3 + i;
     var div = document.createElement('div');
     div.className = 'timeline-item reveal reveal-delay-' + delay;
     
     div.innerHTML = 
-      '<div class="timeline-dot"></div>' +
-      '<div class="timeline-date">' + item.date + '</div>' +
+      '<div class="timeline-dot">' + briefcaseIcon + '</div>' +
       '<div class="timeline-card">' +
         '<h3 class="timeline-title">' + item.title + '</h3>' +
         '<div class="timeline-subtitle">' + item.subtitle + '</div>' +
+        '<div class="timeline-date" style="color: rgba(255,255,255,0.7); font-size: 0.8rem; margin-bottom: 8px;">' + item.date + '</div>' +
         '<p class="timeline-description">' + item.description + '</p>' +
       '</div>';
       

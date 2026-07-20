@@ -26,8 +26,12 @@
 </head>
 <body>
 
+  <!-- ======================== PARTICLES ======================== -->
+  <div id="particles-js" aria-hidden="true" style="position: fixed; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></div>
+
   <!-- Ambient Background Glow -->
   <div class="ambient-glow" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
   <!-- Mobile Nav Overlay -->
   <div class="nav-overlay" id="navOverlay"></div>
@@ -633,6 +637,9 @@
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+
+  <!-- ======================== PARTICLES.JS ======================== -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
   <!-- ======================== JAVASCRIPT ======================== -->
   <script src="firebase-config.js"></script>
