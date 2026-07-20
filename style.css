@@ -1643,15 +1643,38 @@ input, textarea {
 
 .admin-login-header {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  gap: 16px;
   margin-bottom: 8px;
 }
 
+.cat-login-animation {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+  margin-bottom: -10px;
+}
+
+.admin-login.hide-eyes #cat-paw-left {
+  transform: translateY(-50px) translateX(12px) rotate(10deg) !important;
+}
+
+.admin-login.hide-eyes #cat-paw-right {
+  transform: translateY(-50px) translateX(-12px) rotate(-10deg) !important;
+}
+
 .admin-login-header h3 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.02em;
+  text-align: center;
 }
 
 .admin-login-hint {

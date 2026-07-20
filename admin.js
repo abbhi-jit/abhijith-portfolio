@@ -40,6 +40,63 @@
     cancelBtn.addEventListener('click', hideLogin);
   }
 
+  // Cat Animation Logic
+  if (passwordInput) {
+    passwordInput.addEventListener('focus', function() {
+      loginModal.classList.add('hide-eyes');
+    });
+    passwordInput.addEventListener('blur', function() {
+      loginModal.classList.remove('hide-eyes');
+    });
+  }
+
+  var pupilLeft = document.getElementById('cat-pupil-left');
+  var pupilRight = document.getElementById('cat-pupil-right');
+  
+  if (emailInput) {
+    document.addEventListener('mousemove', function(e) {
+      if (!loginModal.classList.contains('active')) return;
+      if (!pupilLeft) pupilLeft = document.getElementById('cat-pupil-left');
+      if (!pupilRight) pupilRight = document.getElementById('cat-pupil-right');
+      if (!pupilLeft || !pupilRight) return;
+      
+      var rect = emailInput.getBoundingClientRect();
+      var inputCenterX = rect.left + rect.width / 2;
+      var inputCenterY = rect.top + rect.height / 2;
+      
+      var mouseX = e.clientX;
+      var mouseY = e.clientY;
+      
+      var dx = mouseX - inputCenterX;
+      var dy = mouseY - inputCenterY;
+      
+      var maxTranslate = 4;
+      var angle = Math.atan2(dy, dx);
+      var distance = Math.min(maxTranslate, Math.sqrt(dx*dx + dy*dy) / 20);
+      
+      var tx = Math.cos(angle) * distance;
+      var ty = Math.sin(angle) * distance;
+      
+      pupilLeft.style.transform = 'translate(' + tx + 'px, ' + ty + 'px)';
+      pupilRight.style.transform = 'translate(' + tx + 'px, ' + ty + 'px)';
+    });
+
+    emailInput.addEventListener('input', function(e) {
+      if (!pupilLeft) pupilLeft = document.getElementById('cat-pupil-left');
+      if (!pupilRight) pupilRight = document.getElementById('cat-pupil-right');
+      if (!pupilLeft || !pupilRight) return;
+      
+      // Calculate length of input to move eyes right
+      var len = e.target.value.length;
+      var maxTranslate = 4;
+      var tx = Math.min(maxTranslate, (len / 10) * maxTranslate);
+      var ty = 2; // Look down at input
+      
+      pupilLeft.style.transform = 'translate(' + tx + 'px, ' + ty + 'px)';
+      pupilRight.style.transform = 'translate(' + tx + 'px, ' + ty + 'px)';
+    });
+  }
+
   if (logoutBtn) {
     logoutBtn.addEventListener('click', function() {
       auth.signOut().then(function() {
