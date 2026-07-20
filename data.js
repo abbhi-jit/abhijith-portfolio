@@ -266,7 +266,7 @@ function renderJourneyItems(items) {
       '<div class="timeline-card">' +
         '<h3 class="timeline-title">' + item.title + '</h3>' +
         '<div class="timeline-subtitle">' + item.subtitle + '</div>' +
-        '<div class="timeline-date" style="color: rgba(255,255,255,0.7); font-size: 0.8rem; margin-bottom: 8px;">' + item.date + '</div>' +
+        '<div class="timeline-date" style="color: var(--text-secondary); font-size: 0.8rem; margin-bottom: 8px;">' + item.date + '</div>' +
         '<p class="timeline-description">' + item.description + '</p>' +
       '</div>';
       

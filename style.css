@@ -1091,6 +1091,8 @@ input, textarea {
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .timeline::before {
@@ -1109,23 +1111,16 @@ input, textarea {
   position: relative;
   width: 50%;
   padding-bottom: 40px;
-  clear: both;
 }
 
 .timeline-item:nth-child(odd) {
-  float: left;
+  align-self: flex-start;
   padding-right: 40px;
 }
 
 .timeline-item:nth-child(even) {
-  float: right;
+  align-self: flex-end;
   padding-left: 40px;
-}
-
-.timeline-item::after {
-  content: '';
-  display: table;
-  clear: both;
 }
 
 .timeline-dot {
@@ -1148,12 +1143,15 @@ input, textarea {
 }
 
 .timeline-card {
-  background: #f97316; /* Orange from the image */
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 24px;
   transition: var(--transition-base);
   position: relative;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 /* Add arrow pointer */
@@ -1167,20 +1165,21 @@ input, textarea {
 }
 
 .timeline-item:nth-child(odd) .timeline-card::before {
-  right: -10px;
+  right: -11px;
   border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent #f97316;
+  border-color: transparent transparent transparent var(--border);
 }
 
 .timeline-item:nth-child(even) .timeline-card::before {
-  left: -10px;
+  left: -11px;
   border-width: 10px 10px 10px 0;
-  border-color: transparent #f97316 transparent transparent;
+  border-color: transparent var(--border) transparent transparent;
 }
 
 .timeline-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(249, 115, 22, 0.2);
+  border-color: var(--border-hover);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .timeline-title {
@@ -1188,18 +1187,19 @@ input, textarea {
   font-weight: 700;
   margin-bottom: 4px;
   letter-spacing: -0.01em;
+  color: var(--text-primary);
 }
 
 .timeline-subtitle {
   font-size: 0.875rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--accent);
   margin-bottom: 10px;
 }
 
 .timeline-description {
   font-size: 0.9375rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-secondary);
   line-height: 1.7;
 }
 
@@ -1521,7 +1521,7 @@ input, textarea {
 
   .timeline-item {
     width: 100%;
-    float: none !important;
+    align-self: flex-start !important;
     padding-left: 20px !important;
     padding-right: 0 !important;
   }
@@ -1534,10 +1534,10 @@ input, textarea {
 
   .timeline-item:nth-child(odd) .timeline-card::before,
   .timeline-item:nth-child(even) .timeline-card::before {
-    left: -10px !important;
+    left: -11px !important;
     right: auto !important;
     border-width: 10px 10px 10px 0 !important;
-    border-color: transparent #f97316 transparent transparent !important;
+    border-color: transparent var(--border) transparent transparent !important;
   }
 
   .footer .container {
