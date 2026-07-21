@@ -18,25 +18,29 @@ window.currentCertificates = [
     title: "AWS Certified Solutions Architect",
     issuer: "Amazon Web Services",
     date: "Aug 2025",
-    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>'
+    image: "https://images.unsplash.com/photo-1605379399642-870262d3d051?q=80&w=600&auto=format&fit=crop",
+    pdf: "#"
   },
   {
     title: "Full-Stack Web Development",
     issuer: "Udemy Bootcamp",
     date: "Mar 2024",
-    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>'
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=600&auto=format&fit=crop",
+    pdf: "#"
   },
   {
     title: "Google Data Analytics",
     issuer: "Coursera",
     date: "Nov 2023",
-    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>'
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop",
+    pdf: "#"
   },
   {
     title: "React Native Specialist",
     issuer: "Meta",
     date: "Jan 2023",
-    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>'
+    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=600&auto=format&fit=crop",
+    pdf: "#"
   }
 ];
 
@@ -313,10 +317,13 @@ function renderCertificates(certs) {
     var card = document.createElement('div');
     card.className = 'cert-card';
     card.innerHTML = 
-      '<div class="cert-card-icon">' + cert.icon + '</div>' +
-      '<h3>' + cert.title + '</h3>' +
-      '<div class="cert-issuer">' + cert.issuer + '</div>' +
-      '<div class="cert-date">' + cert.date + '</div>';
+      '<div class="cert-card-image" style="background-image: url(' + cert.image + ');"></div>' +
+      '<div class="cert-card-content">' +
+        '<h3>' + cert.title + '</h3>' +
+        '<div class="cert-issuer">' + cert.issuer + '</div>' +
+        '<div class="cert-date">' + cert.date + '</div>' +
+        '<a href="' + cert.pdf + '" target="_blank" class="btn-secondary" style="margin-top: 15px; width: 100%; text-decoration: none; padding: 8px; text-align: center;">View PDF</a>' +
+      '</div>';
     container.appendChild(card);
     
     // Dot
