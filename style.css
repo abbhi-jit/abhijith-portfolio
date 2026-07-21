@@ -1946,6 +1946,7 @@ input, textarea {
   height: 300px;
   perspective: 1000px;
   transform-style: preserve-3d;
+  touch-action: pan-x; /* Prevent vertical page scrolling when swiping on the stack */
 }
 
 .cert-card {
@@ -2078,8 +2079,9 @@ input, textarea {
 @media (max-width: 768px) {
   .cert-stack-container {
     height: 250px;
+    width: 85vw;
   }
   .cert-pagination {
-    right: -20px;
+    right: 15px; /* Bring dots further inside on mobile */
   }
 }
