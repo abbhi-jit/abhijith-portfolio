@@ -322,7 +322,7 @@ function renderCertificates(certs) {
         '<h3>' + cert.title + '</h3>' +
         '<div class="cert-issuer">' + cert.issuer + '</div>' +
         '<div class="cert-date">' + cert.date + '</div>' +
-        '<a href="' + cert.pdf + '" target="_blank" class="btn-secondary" style="margin-top: 15px; width: 100%; text-decoration: none; padding: 8px; text-align: center;">View PDF</a>' +
+        '<a href="' + cert.pdf + '" target="_blank" class="cert-btn">View PDF</a>' +
       '</div>';
     container.appendChild(card);
     
@@ -335,12 +335,23 @@ function renderCertificates(certs) {
 }
 
 function loadSiteConfig() {
+  var cached = localStorage.getItem('portfolio_config');
+  if (cached) {
+    try { applySiteConfig(JSON.parse(cached)); } catch(e){}
+  }
   return db.collection('config').doc('site').get().then(function(doc) {
-    if (doc.exists) applySiteConfig(doc.data());
+    if (doc.exists) {
+      localStorage.setItem('portfolio_config', JSON.stringify(doc.data()));
+      applySiteConfig(doc.data());
+    }
   }).catch(function(e) { console.error("Error config:", e); });
 }
 
 function loadProjects() {
+  var cached = localStorage.getItem('portfolio_projects');
+  if (cached) {
+    try { renderProjectCards(JSON.parse(cached)); } catch(e){}
+  }
   return db.collection('projects').orderBy('order', 'asc').get().then(function(snap) {
     var res = [];
     snap.forEach(function(doc) { 
@@ -348,12 +359,17 @@ function loadProjects() {
       d.id = doc.id; 
       res.push(d); 
     });
+    localStorage.setItem('portfolio_projects', JSON.stringify(res));
     renderProjectCards(res);
   }).catch(function(e) { console.error("Error projects:", e); });
 }
 
 
 function loadSkills() {
+  var cached = localStorage.getItem('portfolio_skills');
+  if (cached) {
+    try { renderSkillCards(JSON.parse(cached)); } catch(e){}
+  }
   return db.collection('skills').orderBy('order', 'asc').get().then(function(snap) {
     var res = [];
     snap.forEach(function(doc) { 
@@ -361,11 +377,16 @@ function loadSkills() {
       d.id = doc.id; 
       res.push(d); 
     });
+    localStorage.setItem('portfolio_skills', JSON.stringify(res));
     renderSkillCards(res);
   }).catch(function(e) { console.error("Error skills:", e); });
 }
 
 function loadJourney() {
+  var cached = localStorage.getItem('portfolio_journey');
+  if (cached) {
+    try { renderJourneyItems(JSON.parse(cached)); } catch(e){}
+  }
   return db.collection('journey').orderBy('order', 'asc').get().then(function(snap) {
     var res = [];
     snap.forEach(function(doc) { 
@@ -373,6 +394,7 @@ function loadJourney() {
       d.id = doc.id; 
       res.push(d); 
     });
+    localStorage.setItem('portfolio_journey', JSON.stringify(res));
     renderJourneyItems(res);
   }).catch(function(e) { console.error("Error journey:", e); });
 }

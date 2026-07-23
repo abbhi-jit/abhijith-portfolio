@@ -13,13 +13,19 @@
   <meta property="og:description" content="Computer Science student building digital products with web technologies, AI, and design." />
   <meta property="og:type" content="website" />
 
-  <!-- Fonts -->
+  <!-- Preconnect for faster loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.gstatic.com">
+  <link rel="preconnect" href="https://firestore.googleapis.com">
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=6" />
 
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
@@ -27,11 +33,10 @@
 <body>
 
   <!-- ======================== PARTICLES ======================== -->
-  <div id="particles-js" aria-hidden="true" style="position: fixed; width: 100%; height: 130%; top: 0; left: 0; z-index: 0; pointer-events: none;"></div>
+  <div id="particles-js" aria-hidden="true" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 0; pointer-events: none;"></div>
 
   <!-- Ambient Background Glow -->
   <div class="ambient-glow" aria-hidden="true"></div>
-  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
   <!-- Mobile Nav Overlay -->
   <div class="nav-overlay" id="navOverlay"></div>
@@ -703,10 +708,10 @@
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
   <!-- ======================== JAVASCRIPT ======================== -->
-  <script src="firebase-config.js"></script>
-  <script src="data.js"></script>
-  <script src="script.js"></script>
-  <script src="admin.js"></script>
-  <script src="oneko.js"></script>
+  <script src="firebase-config.js?v=10"></script>
+  <script src="data.js?v=10"></script>
+  <script src="script.js?v=10"></script>
+  <script src="admin.js?v=10"></script>
+  <script src="oneko.js?v=10"></script>
 </body>
 </html>

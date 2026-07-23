@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
   initParallax();
   initStatCounters();
-  initCursorGlow();
   initParticles();
+  initTimelineProgress();
 });
 
 /* ========================================
@@ -56,14 +56,14 @@ function initParticles() {
         }
       },
       "interactivity": {
-        "detect_on": "canvas",
+        "detect_on": "window",
         "events": {
-          "onhover": { "enable": true, "mode": ["grab", "bubble"] },
+          "onhover": { "enable": false, "mode": [] },
           "onclick": { "enable": true, "mode": ["push", "remove"] },
           "resize": true
         },
         "modes": {
-          "grab": { "distance": 200, "line_linked": { "opacity": 1 } },
+          "grab": { "distance": 200, "line_linked": { "opacity": 0.5 } },
           "bubble": { "distance": 250, "size": 6, "duration": 2, "opacity": 1, "speed": 3 },
           "repulse": { "distance": 200, "duration": 0.4 },
           "push": { "particles_nb": 1 },
@@ -238,7 +238,7 @@ function initParallax() {
     if (!ticking) {
       requestAnimationFrame(() => {
         const scrolled = window.scrollY;
-        
+
         if (particles) {
           particles.style.transform = `translateY(${-scrolled * 0.15}px)`;
         }
@@ -473,30 +473,42 @@ style.textContent = `
 document.head.appendChild(style);
 
 /* ========================================
-   CURSOR GLOW EFFECT
+   CURSOR GLOW EFFECT (Removed) & GENTLE PARTICLE ATTRACT
    ======================================== */
 function initCursorGlow() {
-  const cursorGlow = document.getElementById('cursorGlow');
-  if (!cursorGlow) return;
-
-  let mouseX = window.innerWidth / 2;
-  let mouseY = window.innerHeight / 2;
-  let cursorX = mouseX;
-  let cursorY = mouseY;
-  const speed = 0.15;
+  // Glow effect removed per user request
+  
+  // Implement gentle mouse attraction for particles instead
+  let clientX = window.innerWidth / 2;
+  let clientY = window.innerHeight / 2;
 
   window.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
+    clientX = e.clientX;
+    clientY = e.clientY;
   });
 
-  function animate() {
-    cursorX += (mouseX - cursorX) * speed;
-    cursorY += (mouseY - cursorY) * speed;
-    cursorGlow.style.transform = `translate(calc(${cursorX}px - 50%), calc(${cursorY}px - 50%))`;
-    requestAnimationFrame(animate);
+  function gentleAttract() {
+    if (window.pJSDom && window.pJSDom.length > 0) {
+      const pJS = window.pJSDom[0].pJS;
+      const mouseX = clientX;
+      const mouseY = clientY + window.scrollY; // adjust for scrolled document
+      
+      pJS.particles.array.forEach(p => {
+        const dx = mouseX - p.x;
+        const dy = mouseY - p.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        
+        // If within radius, apply a tiny velocity vector towards mouse
+        if (dist < 250) {
+          p.vx += dx * 0.00002;
+          p.vy += dy * 0.00002;
+        }
+      });
+    }
+    requestAnimationFrame(gentleAttract);
   }
-  animate();
+  
+  gentleAttract();
 }
 
 /* ========================================
